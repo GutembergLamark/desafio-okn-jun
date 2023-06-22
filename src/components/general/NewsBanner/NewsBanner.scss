@@ -1,0 +1,14 @@
+@import "../../../assets/sass/abstracts/utilities";
+
+.banner {
+  @include min(769) {
+
+    & img {
+      max-width: 360px;
+    }
+  }
+
+  & img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,19 @@
+@import "../../../assets/sass/abstracts/utilities";
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  & svg {
+    max-width: 17px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+
+    @include min(769) {
+      margin-bottom: 1rem;
+    }
+  }
+}

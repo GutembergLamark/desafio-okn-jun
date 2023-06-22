@@ -1,0 +1,37 @@
+@import "../../../assets/sass/abstracts/variables";
+
+.newsletter-form {
+  padding: 3rem 2rem 2rem;
+
+  &__container {
+    border: none;
+
+    & > * {
+      width: 100%;
+    }
+
+    & label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    & input {
+      border: 2px solid $grey;
+      border-radius: 8px;
+      padding: 1.5rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    background: $dark-slate-grey;
+    color: $white;
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-size: 1.6rem;
+  }
+}

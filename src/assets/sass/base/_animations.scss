@@ -1,0 +1,8 @@
+@keyframes alternate {
+  from {
+    flex-direction: row-reverse;
+  }
+  to {
+    flex-direction: row;
+  }
+}

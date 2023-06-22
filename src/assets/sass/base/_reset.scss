@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  position: relative;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: "Roboto";
+}
+
+main {
+  position: relative;
+
+  &:not(:has(section)) {
+    height: 100vh;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 0;
+}
+
+input,
+textarea,
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.2s ease-in-out opacity;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $dark-slate-grey;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1260px;
+
+  @include min(600) {
+    width: 90%;
+  }
+}
