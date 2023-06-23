@@ -1,0 +1,72 @@
+@import "../../../assets/sass/abstracts/variables";
+@import "../../../assets/sass/abstracts/utilities";
+
+.modal-container {
+  border-radius: 0 !important;
+  justify-content: flex-end !important;
+
+  @include min(769) {
+    & {
+      border-radius: 2rem !important;
+    }
+  }
+
+  .nextui-modal-header {
+    align-items: flex-start !important;
+    gap: 1rem;
+    flex-direction: column;
+
+    @include min(769) {
+      & {
+        gap: 2rem;
+      }
+    }
+
+    & p {
+      font-size: 3.2rem;
+      text-align: left;
+      font-weight: 700;
+    }
+  }
+
+  .nextui-modal-body {
+    flex: 0.5 auto !important;
+
+    & p {
+      font-size: 1.6rem;
+    }
+  }
+
+  .nextui-modal-footer {
+    & button {
+      width: 100%;
+      background-image: linear-gradient(
+        90deg,
+        $dark-slate-grey 0%,
+        $dark-slate-grey 100%
+      );
+      color: $white;
+      margin: 2.5rem 0;
+      padding: 2rem;
+      border-radius: 8px;
+      font-size: 1.6rem;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-image: linear-gradient(
+          90deg,
+          rgba(131, 58, 180, 1) 0%,
+          rgba(253, 29, 29, 1) 50%,
+          rgba(252, 176, 69, 1) 100%
+        );
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  @include min(769) {
+    .nextui-modal-close-icon {
+      padding: 1.5rem !important;
+    }
+  }
+}

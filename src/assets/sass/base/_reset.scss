@@ -77,7 +77,15 @@ p {
   width: 100%;
   max-width: 1260px;
 
+  @include min(480) {
+    width: 80%;
+  }
+
   @include min(600) {
+    width: 70%;
+  }
+
+  @include min(769) {
     width: 90%;
   }
 }
