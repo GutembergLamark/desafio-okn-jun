@@ -64,6 +64,7 @@ const NewsSubscriber = () => {
         setVisible={setVisible}
         bindings={bindings}
         formData={formData}
+        setFormData={setFormData}
       />
     </>
   );

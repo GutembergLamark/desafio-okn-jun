@@ -13,6 +13,7 @@ const SubscriberSuccess = ({
   setVisible,
   bindings,
   formData,
+  setFormData,
 }: {
   setVisible: Dispatch<SetStateAction<boolean>>;
   bindings: {
@@ -20,6 +21,7 @@ const SubscriberSuccess = ({
     onClose: () => void;
   };
   formData: FormData;
+  setFormData: Dispatch<SetStateAction<FormData>>;
 }) => {
   const { email } = formData;
   const [windowWidth, setWindowWidth] = useState(0);
@@ -64,7 +66,16 @@ const SubscriberSuccess = ({
           </Text>
         </Modal.Body>
         <Modal.Footer className="wrapper">
-          <Button onPress={() => setVisible(false)}>Dimiss message</Button>
+          <Button
+            onPress={() => {
+              setFormData({
+                email: "",
+              });
+              setVisible(false);
+            }}
+          >
+            Dimiss message
+          </Button>
         </Modal.Footer>
       </Modal>
     </div>
