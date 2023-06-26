@@ -4,8 +4,8 @@ export const metadata = {
   title: "Newsletter",
   description: "Formulário de inscrição para newsletter",
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 

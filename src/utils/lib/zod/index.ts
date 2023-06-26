@@ -1,9 +1,5 @@
 "use client";
-import {
-  ChangeEvent,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import { z } from "zod";
 
 export type FormData = {
@@ -35,6 +31,7 @@ const handleChange = (
 };
 
 const handleSubmit = async (
+  form: HTMLFormElement,
   setErrors: Dispatch<SetStateAction<IErrors>>,
   formData: FormData,
   validation: z.ZodObject<{}>,
@@ -45,6 +42,7 @@ const handleSubmit = async (
 
     if (validatedData.success) {
       setVisible && setVisible(true);
+      form.reset();
 
       setErrors({});
     }

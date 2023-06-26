@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import "./NewsSubscriber.scss";
 import {
   validationNewsLetter,
@@ -27,8 +27,15 @@ const NewsSubscriber = () => {
       <form
         className="newsletter-form form"
         onSubmit={(e) => {
-          e.preventDefault()
-          handleSubmit(setErrors, formData, validationNewsLetter, setVisible);
+          e.preventDefault();
+          const form = e.target as HTMLFormElement;
+          handleSubmit(
+            form,
+            setErrors,
+            formData,
+            validationNewsLetter,
+            setVisible
+          );
         }}
       >
         <fieldset className="newsletter-form__container">
@@ -39,7 +46,6 @@ const NewsSubscriber = () => {
               name="email"
               id="email"
               placeholder="email@company.com"
-              value={formData.email || ""}
               onChange={(e) => {
                 handleChange(e, setFormData);
               }}
@@ -54,7 +60,11 @@ const NewsSubscriber = () => {
           Subscribe to monthly newsletter
         </button>
       </form>
-      <SubscriberSuccess setVisible={setVisible} bindings={bindings} formData={formData}/>
+      <SubscriberSuccess
+        setVisible={setVisible}
+        bindings={bindings}
+        formData={formData}
+      />
     </>
   );
 };
